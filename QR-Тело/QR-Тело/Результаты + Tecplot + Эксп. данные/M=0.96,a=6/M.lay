@@ -1,0 +1,1639 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"VOLUME.BIN.DAT"'
+$!VarSet |LFDSVL1| = '"X" "Y" "Z" "VX" "VY" "VZ" "EI" "P" "RO" "M" "T" "MT" "TU" "Q" "N2" "O2" "NO" "N" "O" "N+" "O+" "N2+" "O2+" "NO+" "E-"'
+$!SetStyleBase Factory
+$!CreateColorMap 
+  Name = 'Sequential - Viridis'
+  NumControlPoints = 11
+  ControlPoint 1
+    {
+    ColorMapFraction = 0
+    LeadRGB
+      {
+      R = 68
+      G = 1
+      B = 84
+      }
+    TrailRGB
+      {
+      R = 68
+      G = 1
+      B = 84
+      }
+    }
+  ControlPoint 2
+    {
+    ColorMapFraction = 0.08163
+    LeadRGB
+      {
+      R = 72
+      G = 31
+      B = 112
+      }
+    TrailRGB
+      {
+      R = 72
+      G = 31
+      B = 112
+      }
+    }
+  ControlPoint 3
+    {
+    ColorMapFraction = 0.1837
+    LeadRGB
+      {
+      R = 67
+      G = 63
+      B = 133
+      }
+    TrailRGB
+      {
+      R = 67
+      G = 63
+      B = 133
+      }
+    }
+  ControlPoint 4
+    {
+    ColorMapFraction = 0.2857
+    LeadRGB
+      {
+      R = 54
+      G = 92
+      B = 141
+      }
+    TrailRGB
+      {
+      R = 54
+      G = 92
+      B = 141
+      }
+    }
+  ControlPoint 5
+    {
+    ColorMapFraction = 0.3878
+    LeadRGB
+      {
+      R = 43
+      G = 117
+      B = 142
+      }
+    TrailRGB
+      {
+      R = 43
+      G = 117
+      B = 142
+      }
+    }
+  ControlPoint 6
+    {
+    ColorMapFraction = 0.4898
+    LeadRGB
+      {
+      R = 33
+      G = 142
+      B = 141
+      }
+    TrailRGB
+      {
+      R = 33
+      G = 142
+      B = 141
+      }
+    }
+  ControlPoint 7
+    {
+    ColorMapFraction = 0.5918
+    LeadRGB
+      {
+      R = 33
+      G = 166
+      B = 133
+      }
+    TrailRGB
+      {
+      R = 33
+      G = 166
+      B = 133
+      }
+    }
+  ControlPoint 8
+    {
+    ColorMapFraction = 0.6939
+    LeadRGB
+      {
+      R = 64
+      G = 189
+      B = 114
+      }
+    TrailRGB
+      {
+      R = 64
+      G = 189
+      B = 114
+      }
+    }
+  ControlPoint 9
+    {
+    ColorMapFraction = 0.7959
+    LeadRGB
+      {
+      R = 119
+      G = 209
+      B = 83
+      }
+    TrailRGB
+      {
+      R = 119
+      G = 209
+      B = 83
+      }
+    }
+  ControlPoint 10
+    {
+    ColorMapFraction = 0.898
+    LeadRGB
+      {
+      R = 186
+      G = 222
+      B = 40
+      }
+    TrailRGB
+      {
+      R = 186
+      G = 222
+      B = 40
+      }
+    }
+  ControlPoint 11
+    {
+    ColorMapFraction = 1
+    LeadRGB
+      {
+      R = 253
+      G = 231
+      B = 37
+      }
+    TrailRGB
+      {
+      R = 253
+      G = 231
+      B = 37
+      }
+    }
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = 'Untitled'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = No
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = Cartesian3D
+  IncludeText = No
+  IncludeGeom = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!ExtractSliceToZones 
+  SliceSurface = ZPlanes
+  CopyCellCenteredValues = No
+  XVar = 1
+  YVar = 2
+  ZVar = 3
+  ValueBlanking
+    {
+    Include = No
+    }
+  Origin
+    {
+    X = 0.225
+    Y = 0
+    Z = 1E-06
+    }
+  SourceFieldmaps =  [1]
+  SourceFieldmapsIgnoringBlanking =  []
+$!FrameLayout 
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 1
+    Y = 0.25
+    }
+  Width = 9
+  Height = 8
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = Cartesian3D
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!ActiveFieldMaps  =  [1,3]
+$!GlobalRGB 
+  RedChannelVar = 9
+  GreenChannelVar = 4
+  BlueChannelVar = 4
+  RangeMin = 0
+  RangeMax = 1
+$!GlobalContour  1
+  Var = 10
+  ColorMapName = 'Modified Rainbow - Dark ends'
+  DefNumLevels = 400
+  Labels
+    {
+    NumFormat
+      {
+      Formatting = FixedFloat
+      Precision = 2
+      TimeDateFormat = ''
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 13.966
+      Y = 96.644
+      }
+    AutoResize = Yes
+    }
+  ColorCutoff
+    {
+    RangeMin = 0.319645823711
+    RangeMax = 0.95736699559
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0.00078523777178
+      CMax = 1.27622758153
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+400
+0
+0.00300751879699
+0.00601503759398
+0.00902255639098
+0.012030075188
+0.015037593985
+0.018045112782
+0.0210526315789
+0.0240601503759
+0.0270676691729
+0.0300751879699
+0.0330827067669
+0.0360902255639
+0.0390977443609
+0.0421052631579
+0.0451127819549
+0.0481203007519
+0.0511278195489
+0.0541353383459
+0.0571428571429
+0.0601503759398
+0.0631578947368
+0.0661654135338
+0.0691729323308
+0.0721804511278
+0.0751879699248
+0.0781954887218
+0.0812030075188
+0.0842105263158
+0.0872180451128
+0.0902255639098
+0.0932330827068
+0.0962406015038
+0.0992481203008
+0.102255639098
+0.105263157895
+0.108270676692
+0.111278195489
+0.114285714286
+0.117293233083
+0.12030075188
+0.123308270677
+0.126315789474
+0.129323308271
+0.132330827068
+0.135338345865
+0.138345864662
+0.141353383459
+0.144360902256
+0.147368421053
+0.15037593985
+0.153383458647
+0.156390977444
+0.159398496241
+0.162406015038
+0.165413533835
+0.168421052632
+0.171428571429
+0.174436090226
+0.177443609023
+0.18045112782
+0.183458646617
+0.186466165414
+0.189473684211
+0.192481203008
+0.195488721805
+0.198496240602
+0.201503759398
+0.204511278195
+0.207518796992
+0.210526315789
+0.213533834586
+0.216541353383
+0.21954887218
+0.222556390977
+0.225563909774
+0.228571428571
+0.231578947368
+0.234586466165
+0.237593984962
+0.240601503759
+0.243609022556
+0.246616541353
+0.24962406015
+0.252631578947
+0.255639097744
+0.258646616541
+0.261654135338
+0.264661654135
+0.267669172932
+0.270676691729
+0.273684210526
+0.276691729323
+0.27969924812
+0.282706766917
+0.285714285714
+0.288721804511
+0.291729323308
+0.294736842105
+0.297744360902
+0.300751879699
+0.303759398496
+0.306766917293
+0.30977443609
+0.312781954887
+0.315789473684
+0.318796992481
+0.321804511278
+0.324812030075
+0.327819548872
+0.330827067669
+0.333834586466
+0.336842105263
+0.33984962406
+0.342857142857
+0.345864661654
+0.348872180451
+0.351879699248
+0.354887218045
+0.357894736842
+0.360902255639
+0.363909774436
+0.366917293233
+0.36992481203
+0.372932330827
+0.375939849624
+0.378947368421
+0.381954887218
+0.384962406015
+0.387969924812
+0.390977443609
+0.393984962406
+0.396992481203
+0.4
+0.403007518797
+0.406015037594
+0.409022556391
+0.412030075188
+0.415037593985
+0.418045112782
+0.421052631579
+0.424060150376
+0.427067669173
+0.43007518797
+0.433082706767
+0.436090225564
+0.439097744361
+0.442105263158
+0.445112781955
+0.448120300752
+0.451127819549
+0.454135338346
+0.457142857143
+0.46015037594
+0.463157894737
+0.466165413534
+0.469172932331
+0.472180451128
+0.475187969925
+0.478195488722
+0.481203007519
+0.484210526316
+0.487218045113
+0.49022556391
+0.493233082707
+0.496240601504
+0.499248120301
+0.502255639098
+0.505263157895
+0.508270676692
+0.511278195489
+0.514285714286
+0.517293233083
+0.52030075188
+0.523308270677
+0.526315789474
+0.529323308271
+0.532330827068
+0.535338345865
+0.538345864662
+0.541353383459
+0.544360902256
+0.547368421053
+0.55037593985
+0.553383458647
+0.556390977444
+0.559398496241
+0.562406015038
+0.565413533835
+0.568421052632
+0.571428571429
+0.574436090226
+0.577443609023
+0.58045112782
+0.583458646617
+0.586466165414
+0.589473684211
+0.592481203008
+0.595488721805
+0.598496240602
+0.601503759398
+0.604511278195
+0.607518796992
+0.610526315789
+0.613533834586
+0.616541353383
+0.61954887218
+0.622556390977
+0.625563909774
+0.628571428571
+0.631578947368
+0.634586466165
+0.637593984962
+0.640601503759
+0.643609022556
+0.646616541353
+0.64962406015
+0.652631578947
+0.655639097744
+0.658646616541
+0.661654135338
+0.664661654135
+0.667669172932
+0.670676691729
+0.673684210526
+0.676691729323
+0.67969924812
+0.682706766917
+0.685714285714
+0.688721804511
+0.691729323308
+0.694736842105
+0.697744360902
+0.700751879699
+0.703759398496
+0.706766917293
+0.70977443609
+0.712781954887
+0.715789473684
+0.718796992481
+0.721804511278
+0.724812030075
+0.727819548872
+0.730827067669
+0.733834586466
+0.736842105263
+0.73984962406
+0.742857142857
+0.745864661654
+0.748872180451
+0.751879699248
+0.754887218045
+0.757894736842
+0.760902255639
+0.763909774436
+0.766917293233
+0.76992481203
+0.772932330827
+0.775939849624
+0.778947368421
+0.781954887218
+0.784962406015
+0.787969924812
+0.790977443609
+0.793984962406
+0.796992481203
+0.8
+0.803007518797
+0.806015037594
+0.809022556391
+0.812030075188
+0.815037593985
+0.818045112782
+0.821052631579
+0.824060150376
+0.827067669173
+0.83007518797
+0.833082706767
+0.836090225564
+0.839097744361
+0.842105263158
+0.845112781955
+0.848120300752
+0.851127819549
+0.854135338346
+0.857142857143
+0.86015037594
+0.863157894737
+0.866165413534
+0.869172932331
+0.872180451128
+0.875187969925
+0.878195488722
+0.881203007519
+0.884210526316
+0.887218045113
+0.89022556391
+0.893233082707
+0.896240601504
+0.899248120301
+0.902255639098
+0.905263157895
+0.908270676692
+0.911278195489
+0.914285714286
+0.917293233083
+0.92030075188
+0.923308270677
+0.926315789474
+0.929323308271
+0.932330827068
+0.935338345865
+0.938345864662
+0.941353383459
+0.944360902256
+0.947368421053
+0.95037593985
+0.953383458647
+0.956390977444
+0.959398496241
+0.962406015038
+0.965413533835
+0.968421052632
+0.971428571429
+0.974436090226
+0.977443609023
+0.98045112782
+0.983458646617
+0.986466165414
+0.989473684211
+0.992481203008
+0.995488721805
+0.998496240602
+1.0015037594
+1.0045112782
+1.00751879699
+1.01052631579
+1.01353383459
+1.01654135338
+1.01954887218
+1.02255639098
+1.02556390977
+1.02857142857
+1.03157894737
+1.03458646617
+1.03759398496
+1.04060150376
+1.04360902256
+1.04661654135
+1.04962406015
+1.05263157895
+1.05563909774
+1.05864661654
+1.06165413534
+1.06466165414
+1.06766917293
+1.07067669173
+1.07368421053
+1.07669172932
+1.07969924812
+1.08270676692
+1.08571428571
+1.08872180451
+1.09172932331
+1.09473684211
+1.0977443609
+1.1007518797
+1.1037593985
+1.10676691729
+1.10977443609
+1.11278195489
+1.11578947368
+1.11879699248
+1.12180451128
+1.12481203008
+1.12781954887
+1.13082706767
+1.13383458647
+1.13684210526
+1.13984962406
+1.14285714286
+1.14586466165
+1.14887218045
+1.15187969925
+1.15488721805
+1.15789473684
+1.16090225564
+1.16390977444
+1.16691729323
+1.16992481203
+1.17293233083
+1.17593984962
+1.17894736842
+1.18195488722
+1.18496240602
+1.18796992481
+1.19097744361
+1.19398496241
+1.1969924812
+1.2
+$!GlobalContour  2
+  Var = 5
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 2
+  RawData
+15
+-120
+-100
+-80
+-60
+-40
+-20
+0
+20
+40
+60
+80
+100
+120
+140
+160
+$!GlobalContour  3
+  Var = 6
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 3
+  RawData
+10
+-40
+-20
+0
+20
+40
+60
+80
+100
+120
+140
+$!GlobalContour  4
+  Var = 7
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 4
+  RawData
+11
+180000
+185000
+190000
+195000
+200000
+205000
+210000
+215000
+220000
+225000
+230000
+$!GlobalContour  5
+  Var = 8
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 5
+  RawData
+14
+35000
+40000
+45000
+50000
+55000
+60000
+65000
+70000
+75000
+80000
+85000
+90000
+95000
+100000
+$!GlobalContour  6
+  Var = 9
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 6
+  RawData
+13
+0.45
+0.5
+0.55
+0.6
+0.65
+0.7
+0.75
+0.8
+0.85
+0.9
+0.95
+1
+1.05
+$!GlobalContour  7
+  Var = 10
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 7
+  RawData
+12
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1.1
+1.2
+$!GlobalContour  8
+  Var = 11
+  ColorMapName = 'Sequential - Viridis'
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 8
+  RawData
+16
+245
+250
+255
+260
+265
+270
+275
+280
+285
+290
+295
+300
+305
+310
+315
+320
+$!GlobalScatter 
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  RefScatSymbol
+    {
+    Color = Red
+    FillColor = Red
+    }
+$!FieldMap  [1]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    Color = Black
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = Yes
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = None
+    IRange
+      {
+      Max = 1
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!FieldMap  [2-3]
+  Mesh
+    {
+    Color = Black
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Black
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Black
+    }
+  Scatter
+    {
+    Color = Black
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = Yes
+    Color = Black
+    LineThickness = 0.1
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = None
+    IRange
+      {
+      Max = 1
+      }
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!ThreeDAxis 
+  XDetail
+    {
+    VarNum = 1
+    }
+  YDetail
+    {
+    VarNum = 2
+    }
+  ZDetail
+    {
+    VarNum = 3
+    }
+$!View Fit
+$!ThreeDAxis 
+  AxisMode = XYZDependent
+  XYDepXToYRatio = 1
+  DepXToYRatio = 1
+  DepXToZRatio = 1
+  FrameAxis
+    {
+    XYPos
+      {
+      X = 4.9602
+      Y = 5.3579
+      }
+    }
+$!ThreeDAxis 
+  XDetail
+    {
+    ShowAxis = No
+    RangeMin = -0.51750000000000007105
+    RangeMax = 0.96750000000000002665
+    GRSpacing = 0.2
+    AxisLine
+      {
+      Edge = 1
+      }
+    }
+$!ThreeDAxis 
+  YDetail
+    {
+    ShowAxis = No
+    RangeMin = -0.55000000000000004441
+    RangeMax = 0.55000000000000004441
+    GRSpacing = 0.2
+    AxisLine
+      {
+      Edge = 4
+      }
+    }
+$!ThreeDAxis 
+  ZDetail
+    {
+    ShowAxis = No
+    RangeMin = -0.02498450644004521215
+    RangeMax = 0.52467463504514499917
+    GRSpacing = 0.2
+    AxisLine
+      {
+      Edge = 2
+      }
+    }
+$!IsoSurfaceAttributes  1
+  IsoSurfaceSelection = OneSpecificValue
+  Isovalue1 = 0.319645823711
+  Isovalue2 = 0.638506409651
+  Isovalue3 = 0.95736699559
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  2
+  DefinitionContourGroup = 2
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 2
+    FloodColoring = Group2
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  3
+  DefinitionContourGroup = 3
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 3
+    FloodColoring = Group3
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  4
+  DefinitionContourGroup = 4
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 4
+    FloodColoring = Group4
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  5
+  DefinitionContourGroup = 5
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 5
+    FloodColoring = Group5
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  6
+  DefinitionContourGroup = 6
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 6
+    FloodColoring = Group6
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  7
+  DefinitionContourGroup = 7
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 7
+    FloodColoring = Group7
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  8
+  DefinitionContourGroup = 8
+  IsoSurfaceSelection = OneSpecificValue
+  Contour
+    {
+    LineContourGroup = 8
+    FloodColoring = Group8
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!SliceAttributes  1
+  SliceSurface = ZPlanes
+  PrimaryPosition
+    {
+    X = 0.225
+    Y = 0
+    Z = 1E-06
+    I = 1
+    J = 1
+    K = 1
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Include = No
+    Origin
+      {
+      X = 0.225
+      Y = 0
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  2
+  SliceSurface = YPlanes
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  3
+  SliceSurface = ZPlanes
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  4
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  5
+  SliceSurface = YPlanes
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  6
+  SliceSurface = ZPlanes
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  7
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!SliceAttributes  8
+  SliceSurface = YPlanes
+  PrimaryPosition
+    {
+    X = 0.225
+    Z = 0.249845064303
+    }
+  StartPosition
+    {
+    X = -0.3825
+    Y = -0.45
+    Z = 0.0249845064222
+    }
+  EndPosition
+    {
+    X = 0.8325
+    Y = 0.45
+    Z = 0.474705622183
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    SurfaceTranslucency = 10
+    }
+  SliceConstraint
+    {
+    Origin
+      {
+      X = 0.225
+      Z = 0.2498450643025499
+      }
+    BoxDimension
+      {
+      X = 0.675
+      Y = 0.5
+      Z = 0.2498450643114501
+      }
+    }
+$!StreamAttributes 
+  StreamTiming
+    {
+    MarkSize = 1
+    MarkSymbol
+      {
+      GeomShape = Sphere
+      }
+    }
+  RodRibbon
+    {
+    Effects
+      {
+      LightingEffect = Gouraud
+      }
+    }
+  MaxSteps = 10000
+$!GlobalThreeD 
+  AxisScaleFact
+    {
+    X = 1
+    Y = 1
+    Z = 1
+    }
+  RotateOrigin
+    {
+    X = 0.225
+    Y = 0
+    Z = 0.2498450643025499
+    }
+  LightSource
+    {
+    XYZDirection
+      {
+      X = -0.2
+      Y = -0.2
+      Z = 0.9591663046625438
+      }
+    Intensity = 75
+    BackgroundLight = 25
+    IncludeSpecular = Yes
+    SpecularIntensity = 40
+    SpecularShininess = 60
+    }
+  LineLiftFraction = 0.2
+  SymbolLiftFraction = 0.6
+  VectorLiftFraction = 0.7
+  NearPlaneFraction = 0.1
+$!ThreeDView 
+  PSIAngle = 0
+  ThetaAngle = 0
+  ViewerPosition
+    {
+    X = 0.1134792430597457
+    Y = 0.1146676239695416
+    Z = 3.24798583603995
+    }
+  ViewWidth = 1.66929
+$!FieldLayers 
+  ShowMesh = No
+  ShowContour = Yes
+  ShowEdge = No
+  UseLightingEffect = No
+$!SliceLayers 
+  Show = Yes
+$!StreamtraceLayers 
+  Show = No
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config
